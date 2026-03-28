@@ -1,0 +1,267 @@
+`include "constants.vams"
+`include "disciplines.vams"
+
+module rearrange64(
+    in0, in1, in2, in3, in4, in5, in6, in7,
+    in8, in9, in10, in11, in12, in13, in14, in15,
+    in16, in17, in18, in19, in20, in21, in22, in23,
+    in24, in25, in26, in27, in28, in29, in30, in31,
+    in32, in33, in34, in35, in36, in37, in38, in39,
+    in40, in41, in42, in43, in44, in45, in46, in47,
+    in48, in49, in50, in51, in52, in53, in54, in55,
+    in56, in57, in58, in59, in60, in61, in62, in63,
+    out0, out1, out2, out3, out4, out5, out6, out7,
+    out8, out9, out10, out11, out12, out13, out14, out15,
+    out16, out17, out18, out19, out20, out21, out22, out23,
+    out24, out25, out26, out27, out28, out29, out30, out31,
+    out32, out33, out34, out35, out36, out37, out38, out39,
+    out40, out41, out42, out43, out44, out45, out46, out47,
+    out48, out49, out50, out51, out52, out53, out54, out55,
+    out56, out57, out58, out59, out60, out61, out62, out63
+);
+
+    // Inputs
+    input in0, in1, in2, in3, in4, in5, in6, in7,
+          in8, in9, in10, in11, in12, in13, in14, in15,
+          in16, in17, in18, in19, in20, in21, in22, in23,
+          in24, in25, in26, in27, in28, in29, in30, in31,
+          in32, in33, in34, in35, in36, in37, in38, in39,
+          in40, in41, in42, in43, in44, in45, in46, in47,
+          in48, in49, in50, in51, in52, in53, in54, in55,
+          in56, in57, in58, in59, in60, in61, in62, in63;
+    electrical in0, in1, in2, in3, in4, in5, in6, in7,
+               in8, in9, in10, in11, in12, in13, in14, in15,
+               in16, in17, in18, in19, in20, in21, in22, in23,
+               in24, in25, in26, in27, in28, in29, in30, in31,
+               in32, in33, in34, in35, in36, in37, in38, in39,
+               in40, in41, in42, in43, in44, in45, in46, in47,
+               in48, in49, in50, in51, in52, in53, in54, in55,
+               in56, in57, in58, in59, in60, in61, in62, in63;
+
+    // Outputs
+    output out0, out1, out2, out3, out4, out5, out6, out7,
+           out8, out9, out10, out11, out12, out13, out14, out15,
+           out16, out17, out18, out19, out20, out21, out22, out23,
+           out24, out25, out26, out27, out28, out29, out30, out31,
+           out32, out33, out34, out35, out36, out37, out38, out39,
+           out40, out41, out42, out43, out44, out45, out46, out47,
+           out48, out49, out50, out51, out52, out53, out54, out55,
+           out56, out57, out58, out59, out60, out61, out62, out63;
+    electrical out0, out1, out2, out3, out4, out5, out6, out7,
+               out8, out9, out10, out11, out12, out13, out14, out15,
+               out16, out17, out18, out19, out20, out21, out22, out23,
+               out24, out25, out26, out27, out28, out29, out30, out31,
+               out32, out33, out34, out35, out36, out37, out38, out39,
+               out40, out41, out42, out43, out44, out45, out46, out47,
+               out48, out49, out50, out51, out52, out53, out54, out55,
+               out56, out57, out58, out59, out60, out61, out62, out63;
+
+    // Parameters for logic levels
+    parameter real VDD = 1.1;    // logic '1'
+    parameter real VTH = 0.55;   // threshold for logic detection
+
+    integer ones_count;
+
+    analog begin
+        ones_count = 0;
+
+        // Count how many inputs are logic '1'
+        if (V(in0)  > VTH) ones_count = ones_count + 1;
+        if (V(in1)  > VTH) ones_count = ones_count + 1;
+        if (V(in2)  > VTH) ones_count = ones_count + 1;
+        if (V(in3)  > VTH) ones_count = ones_count + 1;
+        if (V(in4)  > VTH) ones_count = ones_count + 1;
+        if (V(in5)  > VTH) ones_count = ones_count + 1;
+        if (V(in6)  > VTH) ones_count = ones_count + 1;
+        if (V(in7)  > VTH) ones_count = ones_count + 1;
+        if (V(in8)  > VTH) ones_count = ones_count + 1;
+        if (V(in9)  > VTH) ones_count = ones_count + 1;
+        if (V(in10) > VTH) ones_count = ones_count + 1;
+        if (V(in11) > VTH) ones_count = ones_count + 1;
+        if (V(in12) > VTH) ones_count = ones_count + 1;
+        if (V(in13) > VTH) ones_count = ones_count + 1;
+        if (V(in14) > VTH) ones_count = ones_count + 1;
+        if (V(in15) > VTH) ones_count = ones_count + 1;
+        if (V(in16) > VTH) ones_count = ones_count + 1;
+        if (V(in17) > VTH) ones_count = ones_count + 1;
+        if (V(in18) > VTH) ones_count = ones_count + 1;
+        if (V(in19) > VTH) ones_count = ones_count + 1;
+        if (V(in20) > VTH) ones_count = ones_count + 1;
+        if (V(in21) > VTH) ones_count = ones_count + 1;
+        if (V(in22) > VTH) ones_count = ones_count + 1;
+        if (V(in23) > VTH) ones_count = ones_count + 1;
+        if (V(in24) > VTH) ones_count = ones_count + 1;
+        if (V(in25) > VTH) ones_count = ones_count + 1;
+        if (V(in26) > VTH) ones_count = ones_count + 1;
+        if (V(in27) > VTH) ones_count = ones_count + 1;
+        if (V(in28) > VTH) ones_count = ones_count + 1;
+        if (V(in29) > VTH) ones_count = ones_count + 1;
+        if (V(in30) > VTH) ones_count = ones_count + 1;
+        if (V(in31) > VTH) ones_count = ones_count + 1;
+        if (V(in32) > VTH) ones_count = ones_count + 1;
+        if (V(in33) > VTH) ones_count = ones_count + 1;
+        if (V(in34) > VTH) ones_count = ones_count + 1;
+        if (V(in35) > VTH) ones_count = ones_count + 1;
+        if (V(in36) > VTH) ones_count = ones_count + 1;
+        if (V(in37) > VTH) ones_count = ones_count + 1;
+        if (V(in38) > VTH) ones_count = ones_count + 1;
+        if (V(in39) > VTH) ones_count = ones_count + 1;
+        if (V(in40) > VTH) ones_count = ones_count + 1;
+        if (V(in41) > VTH) ones_count = ones_count + 1;
+        if (V(in42) > VTH) ones_count = ones_count + 1;
+        if (V(in43) > VTH) ones_count = ones_count + 1;
+        if (V(in44) > VTH) ones_count = ones_count + 1;
+        if (V(in45) > VTH) ones_count = ones_count + 1;
+        if (V(in46) > VTH) ones_count = ones_count + 1;
+        if (V(in47) > VTH) ones_count = ones_count + 1;
+        if (V(in48) > VTH) ones_count = ones_count + 1;
+        if (V(in49) > VTH) ones_count = ones_count + 1;
+        if (V(in50) > VTH) ones_count = ones_count + 1;
+        if (V(in51) > VTH) ones_count = ones_count + 1;
+        if (V(in52) > VTH) ones_count = ones_count + 1;
+        if (V(in53) > VTH) ones_count = ones_count + 1;
+        if (V(in54) > VTH) ones_count = ones_count + 1;
+        if (V(in55) > VTH) ones_count = ones_count + 1;
+        if (V(in56) > VTH) ones_count = ones_count + 1;
+        if (V(in57) > VTH) ones_count = ones_count + 1;
+        if (V(in58) > VTH) ones_count = ones_count + 1;
+        if (V(in59) > VTH) ones_count = ones_count + 1;
+        if (V(in60) > VTH) ones_count = ones_count + 1;
+        if (V(in61) > VTH) ones_count = ones_count + 1;
+        if (V(in62) > VTH) ones_count = ones_count + 1;
+        if (V(in63) > VTH) ones_count = ones_count + 1;
+
+        // Initialize all outputs to zero
+        V(out0)  <+ 0.0;
+        V(out1)  <+ 0.0;
+        V(out2)  <+ 0.0;
+        V(out3)  <+ 0.0;
+        V(out4)  <+ 0.0;
+        V(out5)  <+ 0.0;
+        V(out6)  <+ 0.0;
+        V(out7)  <+ 0.0;
+        V(out8)  <+ 0.0;
+        V(out9)  <+ 0.0;
+        V(out10) <+ 0.0;
+        V(out11) <+ 0.0;
+        V(out12) <+ 0.0;
+        V(out13) <+ 0.0;
+        V(out14) <+ 0.0;
+        V(out15) <+ 0.0;
+        V(out16) <+ 0.0;
+        V(out17) <+ 0.0;
+        V(out18) <+ 0.0;
+        V(out19) <+ 0.0;
+        V(out20) <+ 0.0;
+        V(out21) <+ 0.0;
+        V(out22) <+ 0.0;
+        V(out23) <+ 0.0;
+        V(out24) <+ 0.0;
+        V(out25) <+ 0.0;
+        V(out26) <+ 0.0;
+        V(out27) <+ 0.0;
+        V(out28) <+ 0.0;
+        V(out29) <+ 0.0;
+        V(out30) <+ 0.0;
+        V(out31) <+ 0.0;
+        V(out32) <+ 0.0;
+        V(out33) <+ 0.0;
+        V(out34) <+ 0.0;
+        V(out35) <+ 0.0;
+        V(out36) <+ 0.0;
+        V(out37) <+ 0.0;
+        V(out38) <+ 0.0;
+        V(out39) <+ 0.0;
+        V(out40) <+ 0.0;
+        V(out41) <+ 0.0;
+        V(out42) <+ 0.0;
+        V(out43) <+ 0.0;
+        V(out44) <+ 0.0;
+        V(out45) <+ 0.0;
+        V(out46) <+ 0.0;
+        V(out47) <+ 0.0;
+        V(out48) <+ 0.0;
+        V(out49) <+ 0.0;
+        V(out50) <+ 0.0;
+        V(out51) <+ 0.0;
+        V(out52) <+ 0.0;
+        V(out53) <+ 0.0;
+        V(out54) <+ 0.0;
+        V(out55) <+ 0.0;
+        V(out56) <+ 0.0;
+        V(out57) <+ 0.0;
+        V(out58) <+ 0.0;
+        V(out59) <+ 0.0;
+        V(out60) <+ 0.0;
+        V(out61) <+ 0.0;
+        V(out62) <+ 0.0;
+        V(out63) <+ 0.0;
+
+        // Drive outputs corresponding to ones_count (LSB first)
+        if (ones_count > 0)  V(out0)  <+ VDD;
+        if (ones_count > 1)  V(out1)  <+ VDD;
+        if (ones_count > 2)  V(out2)  <+ VDD;
+        if (ones_count > 3)  V(out3)  <+ VDD;
+        if (ones_count > 4)  V(out4)  <+ VDD;
+        if (ones_count > 5)  V(out5)  <+ VDD;
+        if (ones_count > 6)  V(out6)  <+ VDD;
+        if (ones_count > 7)  V(out7)  <+ VDD;
+        if (ones_count > 8)  V(out8)  <+ VDD;
+        if (ones_count > 9)  V(out9)  <+ VDD;
+        if (ones_count > 10) V(out10) <+ VDD;
+        if (ones_count > 11) V(out11) <+ VDD;
+        if (ones_count > 12) V(out12) <+ VDD;
+        if (ones_count > 13) V(out13) <+ VDD;
+        if (ones_count > 14) V(out14) <+ VDD;
+        if (ones_count > 15) V(out15) <+ VDD;
+        if (ones_count > 16) V(out16) <+ VDD;
+        if (ones_count > 17) V(out17) <+ VDD;
+        if (ones_count > 18) V(out18) <+ VDD;
+        if (ones_count > 19) V(out19) <+ VDD;
+        if (ones_count > 20) V(out20) <+ VDD;
+        if (ones_count > 21) V(out21) <+ VDD;
+        if (ones_count > 22) V(out22) <+ VDD;
+        if (ones_count > 23) V(out23) <+ VDD;
+        if (ones_count > 24) V(out24) <+ VDD;
+        if (ones_count > 25) V(out25) <+ VDD;
+        if (ones_count > 26) V(out26) <+ VDD;
+        if (ones_count > 27) V(out27) <+ VDD;
+        if (ones_count > 28) V(out28) <+ VDD;
+        if (ones_count > 29) V(out29) <+ VDD;
+        if (ones_count > 30) V(out30) <+ VDD;
+        if (ones_count > 31) V(out31) <+ VDD;
+        if (ones_count > 32) V(out32) <+ VDD;
+        if (ones_count > 33) V(out33) <+ VDD;
+        if (ones_count > 34) V(out34) <+ VDD;
+        if (ones_count > 35) V(out35) <+ VDD;
+        if (ones_count > 36) V(out36) <+ VDD;
+        if (ones_count > 37) V(out37) <+ VDD;
+        if (ones_count > 38) V(out38) <+ VDD;
+        if (ones_count > 39) V(out39) <+ VDD;
+        if (ones_count > 40) V(out40) <+ VDD;
+        if (ones_count > 41) V(out41) <+ VDD;
+        if (ones_count > 42) V(out42) <+ VDD;
+        if (ones_count > 43) V(out43) <+ VDD;
+        if (ones_count > 44) V(out44) <+ VDD;
+        if (ones_count > 45) V(out45) <+ VDD;
+        if (ones_count > 46) V(out46) <+ VDD;
+        if (ones_count > 47) V(out47) <+ VDD;
+        if (ones_count > 48) V(out48) <+ VDD;
+        if (ones_count > 49) V(out49) <+ VDD;
+        if (ones_count > 50) V(out50) <+ VDD;
+        if (ones_count > 51) V(out51) <+ VDD;
+        if (ones_count > 52) V(out52) <+ VDD;
+        if (ones_count > 53) V(out53) <+ VDD;
+        if (ones_count > 54) V(out54) <+ VDD;
+        if (ones_count > 55) V(out55) <+ VDD;
+        if (ones_count > 56) V(out56) <+ VDD;
+        if (ones_count > 57) V(out57) <+ VDD;
+        if (ones_count > 58) V(out58) <+ VDD;
+        if (ones_count > 59) V(out59) <+ VDD;
+        if (ones_count > 60) V(out60) <+ VDD;
+        if (ones_count > 61) V(out61) <+ VDD;
+        if (ones_count > 62) V(out62) <+ VDD;
+        if (ones_count > 63) V(out63) <+ VDD;
+    end
+
+endmodule
