@@ -1,0 +1,9 @@
+// Simulation file
+simulator lang=spectre
+
+VDD (VDD 0) vsource dc=1.8
+VSS (VSS 0) vsource dc=0 
+
+ic
++ S0=1.8 S1=0 I0 =0 I1=1.8 I2=1.8 I3=0
+

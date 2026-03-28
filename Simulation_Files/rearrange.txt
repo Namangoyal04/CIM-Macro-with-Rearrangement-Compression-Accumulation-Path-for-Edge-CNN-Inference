@@ -1,0 +1,73 @@
+// Simulation file
+simulator lang=spectre
+
+
+in0 (in0 0) vsource dc=1.8
+in1 (in1 0) vsource dc=0
+in2 (in2 0) vsource dc=1.8
+in3 (in3 0) vsource dc=0
+in4 (in4 0) vsource dc=1.8
+in5 (in5 0) vsource dc=1.8
+in6 (in6 0) vsource dc=0
+in7 (in7 0) vsource dc=0
+in8 (in8 0) vsource dc=1.8
+in9 (in9 0) vsource dc=0
+in10 (in10 0) vsource dc=1.8
+in11 (in11 0) vsource dc=1.8
+in12 (in12 0) vsource dc=0
+in13 (in13 0) vsource dc=1.8
+in14 (in14 0) vsource dc=0
+in15 (in15 0) vsource dc=1.8
+in16 (in16 0) vsource dc=1.8
+in17 (in17 0) vsource dc=0
+in18 (in18 0) vsource dc=1.8
+in19 (in19 0) vsource dc=0
+in20 (in20 0) vsource dc=0
+in21 (in21 0) vsource dc=1.8
+in22 (in22 0) vsource dc=0
+in23 (in23 0) vsource dc=1.8
+in24 (in24 0) vsource dc=1.8
+in25 (in25 0) vsource dc=0
+in26 (in26 0) vsource dc=0
+in27 (in27 0) vsource dc=1.8
+in28 (in28 0) vsource dc=1.8
+in29 (in29 0) vsource dc=0
+in30 (in30 0) vsource dc=0
+in31 (in31 0) vsource dc=1.8
+in32 (in32 0) vsource dc=0
+in33 (in33 0) vsource dc=1.8
+in34 (in34 0) vsource dc=1.8
+in35 (in35 0) vsource dc=0
+in36 (in36 0) vsource dc=0
+in37 (in37 0) vsource dc=1.8
+in38 (in38 0) vsource dc=0
+in39 (in39 0) vsource dc=1.8
+in40 (in40 0) vsource dc=1.8
+in41 (in41 0) vsource dc=0
+in42 (in42 0) vsource dc=1.8
+in43 (in43 0) vsource dc=0
+in44 (in44 0) vsource dc=0
+in45 (in45 0) vsource dc=1.8
+in46 (in46 0) vsource dc=1.8
+in47 (in47 0) vsource dc=0
+in48 (in48 0) vsource dc=1.8
+in49 (in49 0) vsource dc=0
+in50 (in50 0) vsource dc=1.8
+in51 (in51 0) vsource dc=0
+in52 (in52 0) vsource dc=1.8
+in53 (in53 0) vsource dc=1.8
+in54 (in54 0) vsource dc=0
+in55 (in55 0) vsource dc=1.8
+in56 (in56 0) vsource dc=0
+in57 (in57 0) vsource dc=0
+in58 (in58 0) vsource dc=1.8
+in59 (in59 0) vsource dc=0
+in60 (in60 0) vsource dc=1.8
+in61 (in61 0) vsource dc=0
+in62 (in62 0) vsource dc=1.8
+in63 (in63 0) vsource dc=0
+
+
+
+
+

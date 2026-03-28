@@ -1,0 +1,8 @@
+// Simulation file
+simulator lang=spectre
+
+VDD (VDD 0) vsource dc=1.8
+VSS (VSS 0) vsource dc=0 
+CLK (CLK 0) vsource type=pulse val1=1.8 val=0 delay=1n rise=0.005n fall=0.005n width=1n period=2n 
+RESET (RESET 0) vsource type=pulse val1=1.8 val=0 delay=1.5n rise=0.005n fall=0.005n width=19n period=20n
+
