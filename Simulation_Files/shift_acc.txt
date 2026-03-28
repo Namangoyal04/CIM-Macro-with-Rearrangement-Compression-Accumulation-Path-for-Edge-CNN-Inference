@@ -1,0 +1,26 @@
+// Simulation file
+simulator lang=spectre
+
+VDD (VDD 0) vsource dc=1.8
+VSS (VSS 0) vsource dc=0 
+ZERO (ZERO 0) vsource dc=0 
+
+
+ 
+RESET (RESET 0) vsource type=pulse val1=1.8 val=0 delay=1.5n rise=0.005n fall=0.005n width=19n period=12n
+CLK (CLK 0) vsource type=pulse val1=1.8 val=0 delay=1n rise=0.005n fall=0.005n width=1n period=2n
+
+
+
+ INO (IN0 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+ IN1 (IN1 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+ IN2 (IN2 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+ IN3 (IN3 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+ IN4 (IN4 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+ IN5 (IN5 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+ IN6 (IN6 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+ IN7 (IN7 0) vsource type=pulse val1=1.8 val=0 delay=2.5n rise=0.005n fall=0.005n width=2n period=4n
+
+
+
+
