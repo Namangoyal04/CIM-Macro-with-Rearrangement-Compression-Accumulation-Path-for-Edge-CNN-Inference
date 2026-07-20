@@ -4,7 +4,7 @@
 HierCIM: A 16-Kb SRAM-Based Digital CIM Macro With Hierarchical Adder-Tree Accumulation for Edge CNN Inference
 
 # Publication Link
-[IEEE Xplore Paper](https://ieeexplore.ieee.org/abstract/document/11551984)
+[IEEE Xplore Paper - TVLSI](https://ieeexplore.ieee.org/abstract/document/11551984)
 ---
 
 ## 📌 Overview
