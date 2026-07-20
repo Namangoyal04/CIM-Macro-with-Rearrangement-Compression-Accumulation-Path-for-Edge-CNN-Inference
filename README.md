@@ -1,7 +1,7 @@
-# ReCAP-CIM: SRAM-Based Digital Compute-in-Memory Accelerator for Edge CNN Inference
+# HierCIM: A 16-Kb SRAM-Based Digital CIM Macro With Hierarchical Adder-Tree Accumulation for Edge CNN Inference
 
 ## 📄 Paper Reference
-ReCAP-CIM: A 16-Kb SRAM-Based Digital CIM Macro with Rearrangement–Compression Accumulation Path for Edge CNN Inference
+HierCIM: A 16-Kb SRAM-Based Digital CIM Macro With Hierarchical Adder-Tree Accumulation for Edge CNN Inference
 
 ---
 
